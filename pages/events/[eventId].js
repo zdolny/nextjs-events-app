@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import EventContent from "../../components/eventDetail/eventContent";
-import EventLogistics from "../../components/eventDetail/eventLogistics";
-import EventSummary from "../../components/eventDetail/eventSummary";
+import EventContent from "../../components/event-detail/event-content";
+import EventLogistics from "../../components/event-detail/event-logistics";
+import EventSummary from "../../components/event-detail/event-summary";
 import { getEventById } from "../../data";
 
 const EventDetail = () => {

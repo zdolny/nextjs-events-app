@@ -1,4 +1,4 @@
-import classes from "./logisticsItem.module.css";
+import classes from "./logistics-item.module.css";
 
 const LogisticsItem = (props) => {
   const { icon: Icon } = props;

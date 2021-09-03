@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./mainHeader.module.css";
+import styles from "./main-header.module.css";
 
 const MainHeader = () => (
   <header className={styles.header}>

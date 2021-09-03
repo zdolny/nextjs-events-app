@@ -1,5 +1,5 @@
-import Button from "../ui/Button";
-import styles from "./EventItem.module.css";
+import Button from "../ui/button";
+import styles from "./event-item.module.css";
 import DateIcon from "../icons/date-icon";
 import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";

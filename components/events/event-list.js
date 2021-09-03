@@ -1,5 +1,5 @@
-import EventItem from "./EventItem";
-import styles from "./EventList.module.css";
+import EventItem from "./event-item";
+import styles from "./event-list.module.css";
 
 const EventList = ({ events }) => {
   return (

@@ -1,4 +1,4 @@
-import MainHeader from "./mainHeader";
+import MainHeader from "./main-header";
 
 const Layout = (props) => (
   <>

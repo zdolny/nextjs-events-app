@@ -1,4 +1,4 @@
-import classes from "./eventSummary.module.css";
+import classes from "./event-summary.module.css";
 
 const EventSummary = ({ title }) => (
   <section className={classes.summary}>
