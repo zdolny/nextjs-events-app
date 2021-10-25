@@ -3,12 +3,7 @@ import EventList from "../components/events/event-list";
 
 const Home = () => {
   const featuredEvents = getFeaturedEvents();
-  return (
-    <>
-      <h1>home</h1>
-      <EventList events={featuredEvents} />
-    </>
-  );
+  return <EventList events={featuredEvents} />;
 };
 
 export default Home;

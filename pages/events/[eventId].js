@@ -3,6 +3,7 @@ import EventContent from "../../components/event-detail/event-content";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventSummary from "../../components/event-detail/event-summary";
 import { getEventById } from "../../data";
+import ErrorAlert from "../../components/ui/error-alert";
 
 const EventDetail = () => {
   const router = useRouter();
@@ -11,7 +12,11 @@ const EventDetail = () => {
   const event = getEventById(eventId);
 
   if (!event) {
-    return <p>no such event</p>;
+    return (
+      <ErrorAlert>
+        <p>No such event</p>
+      </ErrorAlert>
+    );
   }
 
   return (
