@@ -1,5 +1,5 @@
 export const getAllEvents = async () => {
-  const response = await fetch(process.env.firebase_db_url);
+  const response = await fetch(process.env.NEXT_PUBLIC_FIREBASE_DB_URL);
   const data = await response.json();
 
   const events = [];
