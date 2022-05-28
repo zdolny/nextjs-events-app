@@ -1,9 +1,15 @@
 import { getFeaturedEvents } from "../helpers/api-util";
 import EventList from "../components/events/event-list";
+import type { GetStaticProps, NextPage } from "next";
+import { TEvent } from "../types/events.types";
 
-const Home = (props) => <EventList events={props.events} />;
+type Props = {
+  events: TEvent[];
+};
 
-export const getStaticProps = async () => {
+const Home: NextPage = (props: Props) => <EventList events={props.events} />;
+
+export const getStaticProps: GetStaticProps = async () => {
   const featuredEvents = await getFeaturedEvents();
 
   return {

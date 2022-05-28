@@ -1,9 +1,15 @@
+import { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import EventList from "../../components/events/event-list";
 import EventsSearch from "../../components/events/events-search";
 import { getAllEvents } from "../../helpers/api-util";
+import { TEvent } from "../../types/events.types";
 
-const AllEvents = ({ events }) => {
+type Props = {
+  events: TEvent[];
+};
+
+const AllEvents: NextPage<Props> = ({ events }) => {
   const router = useRouter();
 
   const findEventsHandler = (year, month) => {
@@ -20,7 +26,7 @@ const AllEvents = ({ events }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const events = await getAllEvents();
 
   return {

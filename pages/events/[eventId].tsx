@@ -1,11 +1,17 @@
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import EventContent from "../../components/event-detail/event-content";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventSummary from "../../components/event-detail/event-summary";
 import ErrorAlert from "../../components/ui/error-alert";
 import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
+import { TEvent } from "../../types/events.types";
 
-const EventDetail = (props) => {
+type Props = {
+  event: TEvent;
+};
+
+const EventDetail: NextPage<Props> = (props) => {
   const { event } = props;
 
   if (!event) {
@@ -36,7 +42,7 @@ const EventDetail = (props) => {
   );
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const { eventId } = context.params;
   const event = await getEventById(eventId);
 
@@ -48,7 +54,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const events = await getFeaturedEvents();
 
   const paths = events.map((event) => ({ params: { eventId: event.id } }));
