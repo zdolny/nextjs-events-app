@@ -6,6 +6,7 @@ import EventSummary from "../../components/event-detail/event-summary";
 import ErrorAlert from "../../components/ui/error-alert";
 import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
 import { TEvent } from "../../types/events.types";
+import Comments from "../../components/input/comments";
 
 type Props = {
   event: TEvent;
@@ -38,6 +39,7 @@ const EventDetail: NextPage<Props> = (props) => {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   );
 };
